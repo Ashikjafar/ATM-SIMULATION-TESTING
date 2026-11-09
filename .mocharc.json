@@ -1,0 +1,7 @@
+{
+  "spec": "tests/**/*.spec.js",
+  "require": ["tests/helpers/hooks.js"],
+  "timeout": 30000,
+  "reporter": "mochawesome",
+  "reporter-option": ["reportDir=reports", "reportFilename=atm-test-report", "html=true", "json=true", "quiet=false"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "atm-simulation-testing",
+  "version": "1.0.0",
+  "description": "Automated functional testing of a Smart ATM simulation using Selenium WebDriver, Mocha, Chai and the Page Object Model",
+  "scripts": {
+    "test": "mocha",
+    "test:headed": "HEADLESS=false mocha",
+    "test:auth": "mocha --grep \"Authentication\"",
+    "test:txn": "mocha --grep \"Transactions\""
+  },
+  "keywords": ["selenium", "mocha", "chai", "page-object-model", "atm", "test-automation"],
+  "author": "Ganeshraj B",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "chromedriver": "*",
+    "mocha": "^10.4.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.21.0"
+  }
+}

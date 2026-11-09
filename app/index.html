@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart ATM Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="atm">
+    <header class="atm-header">
+      <h1 id="app-title">SMART ATM</h1>
+    </header>
+
+    <!-- LOGIN -->
+    <section id="login-page" class="screen">
+      <h2 id="login-heading">Insert Card &amp; Enter PIN</h2>
+      <label for="card-number">Card / Account Number</label>
+      <input id="card-number" type="text" maxlength="10" placeholder="10-digit card number" />
+      <label for="pin">PIN</label>
+      <input id="pin" type="password" maxlength="4" placeholder="4-digit PIN" />
+      <button id="login-btn" type="button">Login</button>
+      <p id="login-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard-page" class="screen hidden">
+      <h2 id="dashboard-heading">SMART ATM - CUSTOMER DASHBOARD</h2>
+      <p id="welcome-text"></p>
+      <p class="balance-line">Available Balance: <strong id="dashboard-balance"></strong></p>
+      <h3>TRANSACTION OPTIONS</h3>
+      <div class="menu-grid">
+        <button id="menu-balance" type="button">Balance Enquiry</button>
+        <button id="menu-withdraw" type="button">Cash Withdrawal</button>
+        <button id="menu-deposit" type="button">Cash Deposit</button>
+        <button id="menu-transfer" type="button">Fund Transfer</button>
+        <button id="menu-statement" type="button">Mini Statement</button>
+        <button id="menu-logout" type="button" class="danger">Logout</button>
+      </div>
+    </section>
+
+    <!-- BALANCE -->
+    <section id="balance-page" class="screen hidden">
+      <h2 id="balance-heading">Balance Enquiry</h2>
+      <p>Available Balance: <strong id="balance-amount"></strong></p>
+      <button id="balance-back" type="button" class="secondary">Back to Menu</button>
+    </section>
+
+    <!-- WITHDRAW -->
+    <section id="withdraw-page" class="screen hidden">
+      <h2 id="withdraw-heading">Cash Withdrawal</h2>
+      <p class="hint">Multiples of ₹100. Maximum ₹20,000 per transaction.</p>
+      <label for="withdraw-amount">Amount (₹)</label>
+      <input id="withdraw-amount" type="text" inputmode="numeric" />
+      <button id="withdraw-btn" type="button">Withdraw</button>
+      <button id="withdraw-back" type="button" class="secondary">Back to Menu</button>
+      <p id="withdraw-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- DEPOSIT -->
+    <section id="deposit-page" class="screen hidden">
+      <h2 id="deposit-heading">Cash Deposit</h2>
+      <p class="hint">Multiples of ₹100. Maximum ₹50,000 per transaction.</p>
+      <label for="deposit-amount">Amount (₹)</label>
+      <input id="deposit-amount" type="text" inputmode="numeric" />
+      <button id="deposit-btn" type="button">Deposit</button>
+      <button id="deposit-back" type="button" class="secondary">Back to Menu</button>
+      <p id="deposit-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- TRANSFER -->
+    <section id="transfer-page" class="screen hidden">
+      <h2 id="transfer-heading">Fund Transfer</h2>
+      <label for="transfer-account">Destination Account Number</label>
+      <input id="transfer-account" type="text" maxlength="10" />
+      <label for="transfer-amount">Amount (₹)</label>
+      <input id="transfer-amount" type="text" inputmode="numeric" />
+      <button id="transfer-btn" type="button">Transfer</button>
+      <button id="transfer-back" type="button" class="secondary">Back to Menu</button>
+      <p id="transfer-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- STATEMENT -->
+    <section id="statement-page" class="screen hidden">
+      <h2 id="statement-heading">Mini Statement</h2>
+      <table id="statement-table">
+        <thead><tr><th>Type</th><th>Amount (₹)</th><th>Balance (₹)</th></tr></thead>
+        <tbody id="statement-body"></tbody>
+      </table>
+      <p id="statement-empty" class="hint hidden">No transactions yet.</p>
+      <button id="statement-back" type="button" class="secondary">Back to Menu</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
